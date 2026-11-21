@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07130f">
+  <meta name="description" content="ECO-SMART 2.0 - AI-powered waste segregation and environmental intelligence.">
+  <title>ECO-SMART 2.0 | Eco Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/three@0.179.1/build/three.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script>
+  <script defer src="/app.js"></script>
+</head>
+<body>
+<div class="noise"></div>
+
+<header class="navbar">
+  <a href="#home" class="logo">
+    <span class="logo-symbol">✳</span>
+    <span>ECO<span class="logo-green">-SMART</span><small>ENVIRONMENTAL INTELLIGENCE</small></span>
+  </a>
+
+  <button class="menu-button" id="menuButton" aria-label="Open navigation">☰</button>
+
+  <nav id="navigation">
+    <a href="#home" data-i18n="home">Home</a>
+    <a href="#intelligence" data-i18n="intelligence">Intelligence</a>
+    <a href="#classifier" data-i18n="classifier">Waste AI</a>
+    <a href="#learn" data-i18n="learn">Learn</a>
+    <a href="#community" data-i18n="community">Community</a>
+  </nav>
+
+  <div class="nav-right">
+    <select id="languageSelect" aria-label="Select language">
+      <option value="en">EN</option>
+      <option value="hi">हिंदी</option>
+      <option value="as">অসমীয়া</option>
+    </select>
+    <a href="#ai" class="nav-button">Ask ECO AI ↗</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="hero-content reveal">
+    <div class="status-label"><span class="live-dot"></span> ECO INTELLIGENCE SYSTEM <span class="status-version">V2.0</span></div>
+    <h1>THE FUTURE IS<br>NOT DISPOSABLE<span class="green-dot">.</span></h1>
+    <p>Smarter waste decisions. Cleaner communities. A healthier planet. Meet your intelligent companion for responsible waste management.</p>
+    <div class="hero-actions">
+      <a href="#classifier" class="primary-btn">Explore waste AI <span>↗</span></a>
+      <a href="#intelligence" class="secondary-btn">Explore platform <span>↓</span></a>
+    </div>
+    <div class="hero-metrics">
+      <div><strong class="counter" data-target="4">0</strong><span>WASTE CATEGORIES</span></div>
+      <div><strong>AI<span class="green-dot">.</span></strong><span>SMART ASSISTANT</span></div>
+      <div><strong>24/7</strong><span>LEARNING PLATFORM</span></div>
+    </div>
+  </div>
+
+  <div class="earth-stage" id="earthStage">
+    <div class="earth-halo"></div>
+    <div class="earth-ring ring-a"></div>
+    <div class="earth-ring ring-b"></div>
+    <div id="earthCanvas" aria-label="Interactive 3D Earth illustration"></div>
+    <div class="earth-label"><span class="live-dot"></span> PLANET EARTH <small>OUR ONLY HOME</small></div>
+    <div class="float-card float-one"><span>🌿</span><div><b>Think sustainably</b><small>Make every choice count</small></div></div>
+    <div class="float-card float-two"><span>♻</span><div><b>Waste less</b><small>Reuse more, recycle right</small></div></div>
+  </div>
+  <div class="hero-footer"><span>01 — A NEW WAY TO THINK ABOUT WASTE</span><a href="#intelligence">SCROLL TO EXPLORE ↓</a></div>
+</section>
+
+<!-- DASHBOARD -->
+<section class="dashboard section-wrap" id="intelligence">
+  <div class="section-top reveal">
+    <div><span class="eyebrow">01 / LIVE PLATFORM OVERVIEW</span><h2>Environmental <span>intelligence.</span></h2></div>
+    <div class="system-status"><span class="live-dot"></span> SYSTEM OPERATIONAL</div>
+  </div>
+
+  <div class="stats-grid">
+    <article class="stat-card reveal"><div class="stat-icon">◈</div><span>COMMUNITY REPORTS</span><strong id="statReports">0</strong><small>Reports submitted to this demo</small></article>
+    <article class="stat-card reveal"><div class="stat-icon">✳</div><span>QUIZ ATTEMPTS</span><strong id="statQuizzes">0</strong><small>Environmental learning activity</small></article>
+    <article class="stat-card reveal"><div class="stat-icon">◎</div><span>PARTICIPANTS</span><strong id="statParticipants">0</strong><small>Unique quiz usernames</small></article>
+    <article class="stat-card highlight-card reveal"><div class="stat-icon">⌁</div><span>AI ASSISTANT</span><strong class="small-status">READY</strong><small id="aiStatus">Local knowledge engine</small></article>
+  </div>
+
+  <div class="analytics-grid">
+    <article class="panel chart-panel reveal">
+      <div class="panel-heading"><div><span class="eyebrow">COMMUNITY INSIGHTS</span><h3>Reported waste issues</h3></div><span class="live-tag">DATABASE</span></div>
+      <div class="chart-holder"><canvas id="wasteChart"></canvas></div>
+      <p class="chart-note">Based on reports submitted through this platform, not a measurement of all local waste.</p>
+    </article>
+    <article class="panel insight-panel reveal">
+      <span class="eyebrow">ECO INTELLIGENCE NOTE</span>
+      <div class="insight-icon">✧</div>
+      <h3>Better sorting.<br><span>Better outcomes.</span></h3>
+      <p>Separating materials at source can reduce contamination and help suitable materials reach composting and recycling systems.</p>
+      <a href="#learn" class="inline-link">Explore the learning centre ↗</a>
+    </article>
+  </div>
+</section>
+
+<!-- CLASSIFIER -->
+<section class="classifier-section section-wrap" id="classifier">
+  <div class="section-top reveal">
+    <div><span class="eyebrow">02 / SMART WASTE IDENTIFICATION</span><h2>Meet your <span>waste detective.</span></h2></div>
+    <span class="feature-badge">SMART CLASSIFIER</span>
+  </div>
+
+  <div class="classifier-layout">
+    <div class="classifier-copy reveal">
+      <div class="big-symbol">⌕</div>
+      <h3>Not sure where<br>it belongs?</h3>
+      <p>Enter the name of an item. The ECO-SMART classification engine will suggest a category and responsible disposal method.</p>
+      <div class="mini-tags"><span>ORGANIC</span><span>RECYCLABLE</span><span>HAZARDOUS</span></div>
+    </div>
+    <div class="panel classifier-panel reveal">
+      <label for="wasteInput">ENTER A WASTE ITEM</label>
+      <div class="input-row">
+        <input id="wasteInput" maxlength="100" placeholder="Try banana peel, battery, newspaper...">
+        <button class="primary-btn" id="classifyButton">Identify ↗</button>
+      </div>
+      <div class="quick-examples">
+        <span>TRY:</span>
+        <button data-item="banana peel">Banana peel</button>
+        <button data-item="battery">Battery</button>
+        <button data-item="newspaper">Newspaper</button>
+      </div>
+      <div id="classifyResult" class="classify-result hidden" aria-live="polite"></div>
+      <div class="disclaimer">Educational starter classifier. It is not an official disposal decision or a trained image-recognition model.</div>
+    </div>
+  </div>
+</section>
+
+<!-- AI ASSISTANT -->
+<section class="ai-section section-wrap" id="ai">
+  <div class="section-top reveal">
+    <div><span class="eyebrow">03 / CONVERSATIONAL ECO INTELLIGENCE</span><h2>Talk to <span>ECO AI.</span></h2></div>
+    <span class="feature-badge">HYBRID AI ENGINE</span>
+  </div>
+
+  <div class="ai-layout">
+    <div class="ai-intro reveal">
+      <div class="ai-orb">✳</div>
+      <h3>Your eco guide.<br>Your everyday assistant.</h3>
+      <p>Ask about waste sorting, composting, recycling, pollution and responsible disposal.</p>
+      <div class="ai-capabilities">
+        <span>✦ Waste segregation guidance</span>
+        <span>✦ Recycling education</span>
+        <span>✦ Composting information</span>
+        <span>✦ Local knowledge fallback</span>
+      </div>
+      <div class="ai-mode"><span class="live-dot"></span> <span id="chatMode">LOCAL AI READY</span></div>
+    </div>
+
+    <div class="chat-panel panel reveal">
+      <div class="chat-header"><div class="bot-avatar">✳</div><div><b>ECO ASSISTANT</b><small><span class="live-dot"></span> Online</small></div><span class="chat-version">V2.0</span></div>
+      <div class="chat-messages" id="chatMessages" aria-live="polite">
+        <div class="message bot-message"><span class="message-avatar">✳</span><div><b>ECO AI</b><p>Hello! I'm your environmental learning assistant. Ask me about waste segregation, recycling or composting. 🌱</p></div></div>
+      </div>
+      <div class="chat-suggestions">
+        <button data-prompt="How do I separate household waste?">How to sort waste?</button>
+        <button data-prompt="How can I dispose of batteries?">Battery disposal</button>
+      </div>
+      <form id="chatForm" class="chat-input">
+        <input id="chatInput" maxlength="1000" placeholder="Ask something about the environment..." autocomplete="off" required>
+        <button type="submit" aria-label="Send message">➤</button>
+      </form>
+      <div class="chat-disclaimer">AI answers are educational. Verify local waste rules with your municipal authority.</div>
+    </div>
+  </div>
+</section>
+
+<!-- LEARNING -->
+<section class="learning-section section-wrap" id="learn">
+  <div class="section-top reveal">
+    <div><span class="eyebrow">04 / KNOWLEDGE CENTRE</span><h2>Know the four <span>categories.</span></h2></div>
+    <p class="section-description">The first step towards responsible waste management is understanding what you are disposing of.</p>
+  </div>
+  <div class="waste-grid">
+    <article class="waste-card organic reveal"><div class="waste-emoji">🍃</div><span>01 / ORGANIC</span><h3>Biodegradable</h3><p>Organic material that can break down naturally under suitable conditions.</p><div class="waste-examples">Fruit peels · Food scraps · Leaves</div><div class="bin-chip">GREEN / ORGANIC COLLECTION</div></article>
+    <article class="waste-card recyclable reveal"><div class="waste-emoji">♻️</div><span>02 / DRY MATERIAL</span><h3>Recyclable</h3><p>Accepted materials that can be processed into useful new products.</p><div class="waste-examples">Paper · Cardboard · Glass</div><div class="bin-chip">BLUE / DRY COLLECTION</div></article>
+    <article class="waste-card hazardous reveal"><div class="waste-emoji">⚠️</div><span>03 / SPECIAL CARE</span><h3>Hazardous</h3><p>Items that may need specialised collection and safe handling.</p><div class="waste-examples">Batteries · Chemicals · E-waste</div><div class="bin-chip">AUTHORISED COLLECTION</div></article>
+    <article class="waste-card residual reveal"><div class="waste-emoji">◉</div><span>04 / LEFTOVERS</span><h3>Residual</h3><p>Items not accepted for local composting or recycling streams.</p><div class="waste-examples">Soiled tissues · Dirty wrappers</div><div class="bin-chip">RESIDUAL COLLECTION</div></article>
+  </div>
+  <div class="local-note">NOTE: Waste-bin colours and accepted items vary between municipalities. Always follow the collection rules in your area.</div>
+</section>
+
+<!-- CHALLENGES -->
+<section class="challenge-section section-wrap" id="challenges">
+  <div class="section-top reveal">
+    <div><span class="eyebrow">05 / EVERYDAY ECO ACTION</span><h2>Take the <span>eco challenge.</span></h2></div>
+    <span class="feature-badge">COMMUNITY MISSIONS</span>
+  </div>
+  <div id="challengeGrid" class="challenge-grid">
+    <div class="panel loading-card">Loading environmental challenges...</div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz-section section-wrap" id="quiz">
+  <div class="section-top reveal">
+    <div><span class="eyebrow">06 / KNOWLEDGE TEST</span><h2>Test your <span>eco IQ.</span></h2></div>
+    <span class="feature-badge">EARN ECO POINTS</span>
+  </div>
+  <div class="quiz-layout">
+    <div class="quiz-info reveal"><div class="quiz-symbol">✧</div><h3>Learn something.<br>Make a difference.</h3><p>Answer five questions about waste segregation and responsible environmental practices.</p><span>10 POINTS PER CORRECT ANSWER</span></div>
+    <div class="panel quiz-panel reveal">
+      <div class="quiz-header"><span>ENVIRONMENTAL KNOWLEDGE</span><span id="quizCounter">5 QUESTIONS</span></div>
+      <label for="quizName">DISPLAY NAME</label>
+      <input id="quizName" maxlength="30" placeholder="Eco Explorer">
+      <div id="quizQuestions"></div>
+      <button class="primary-btn" id="submitQuiz">Submit answers ↗</button>
+      <div id="quizResult" class="quiz-result hidden" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="community-section section-wrap" id="community">
+  <div class="section-top reveal">
+    <div><span class="eyebrow">07 / COMMUNITY PARTICIPATION</span><h2>Be part of the <span>solution.</span></h2></div>
+  </div>
+  <div class="community-layout">
+    <div class="community-copy reveal"><div class="community-icon">⌖</div><h3>Notice a waste issue?<br>Report it.</h3><p>Share a general location and description of improper waste disposal to demonstrate community engagement.</p><div class="privacy-note">Your report is stored in the project database. It is not automatically sent to municipal authorities. Do not enter sensitive personal information.</div></div>
+    <form id="reportForm" class="panel report-form reveal">
+      <label for="reportName">YOUR NAME</label><input id="reportName" maxlength="80" required placeholder="Your name">
+      <label for="reportLocation">GENERAL LOCATION</label><input id="reportLocation" maxlength="160" required placeholder="Area or nearby landmark">
+      <label for="reportIssue">TYPE OF ISSUE</label>
+      <select id="reportIssue" required><option value="">Choose issue</option><option>Mixed waste dumping</option><option>Plastic litter</option><option>Blocked drain</option><option>Hazardous waste disposal</option><option>Overflowing public bin</option><option>Other</option></select>
+      <label for="reportDescription">DESCRIPTION</label><textarea id="reportDescription" maxlength="600" rows="4" required placeholder="Describe what you noticed..."></textarea>
+      <button class="primary-btn" type="submit">Submit community report ↗</button>
+      <p id="reportMessage" class="form-message" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<!-- LEADERBOARD -->
+<section class="leader-section section-wrap" id="leaderboard">
+  <div class="section-top reveal">
+    <div><span class="eyebrow">08 / ECO COMMUNITY</span><h2>Meet the <span>eco learners.</span></h2></div>
+    <span class="feature-badge">TOP QUIZ SCORES</span>
+  </div>
+  <div class="panel leaderboard-panel reveal">
+    <div class="leader-head"><span>RANK</span><span>PARTICIPANT</span><span>ATTEMPTS</span><span>POINTS</span></div>
+    <div id="leaderboardRows"><div class="leader-empty">Be the first to complete the eco quiz.</div></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+</main>
+<footer class="footer">
+  <div class="footer-main"><a href="#home" class="logo"><span class="logo-symbol">✳</span><span>ECO<span class="logo-green">-SMART</span><small>ENVIRONMENTAL INTELLIGENCE</small></span></a><p>Technology for awareness. Awareness for action. Action for our planet.</p></div>
+  <div class="footer-bottom"><span>© 2026 ECO-SMART 2.0</span><span>DESIGNED & DEVELOPED BY <b>NILUTPAL</b></span><a href="#home">BACK TO TOP ↑</a></div>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+</body>
+</html>

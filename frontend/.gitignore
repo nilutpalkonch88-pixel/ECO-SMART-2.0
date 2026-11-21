@@ -1,0 +1,9 @@
+
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.env
+backend/eco_smart.db
+backend/data/
+.DS_Store
